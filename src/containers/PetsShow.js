@@ -3,15 +3,15 @@ import { connect } from 'react-redux';
 
 const PetsShow = ({ pet }) =>
   <div className="col-md-8">
-    <h2>{pet.name}</h2>
-    <p>{pet.description}</p>
+    <h2>Name: {pet.name}</h2>
+    <p>Description: {pet.description}</p>
   </div>;
 
 const mapStateToProps = (state, ownProps) => {
   const pet = state.pets.find(
-    pet => pet.id === ownProps.match.params.petId
+    pet => pet.id === +ownProps.match.params.petId
   )
-  
+
   if (pet) {
     return { pet }
   } else {

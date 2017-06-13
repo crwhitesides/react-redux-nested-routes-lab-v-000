@@ -15,7 +15,6 @@ class PetsPage extends Component {
   render() {
 
     const { match, pets } = this.props
-
     return (
       <div>
         <PetsList pets={pets} />
